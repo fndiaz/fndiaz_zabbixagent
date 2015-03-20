@@ -8,7 +8,15 @@ class fndiaz_zabbixagent::install {
         ensure  => directory,
         owner   => "zabbix",
         group   => "zabbix",
-        source  => "puppet:///files/var/log/zabbix",
+        #source  => "puppet:///files/var/log/zabbix",
+        require => Package[$::fndiaz_zabbixagent::package_name]
+    }
+
+    file { '/etc/zabbix/zabbix_agentd.d':
+        ensure  => directory,
+        owner   => "zabbix",
+        group   => "zabbix",
+        #source  => "puppet:///files/var/log/zabbix",
         require => Package[$::fndiaz_zabbixagent::package_name]
     }
 
