@@ -24,11 +24,11 @@ To install the correct Zabbix Agent package on your system, include the 'fndiaz_
 
 * Instal Zabbix Agent with some arguments
 
-class {'fndiaz_zabbixagent':
-    ensure => running,
-    enable => true,
-    zserver=> '192.168.1.1',
- }
+    class {'fndiaz_zabbixagent':
+        ensure => running,
+        enable => true,
+        zserver=> '192.168.1.1',
+    }
 
 ## Limitations
 
