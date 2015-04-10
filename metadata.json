@@ -1,14 +1,24 @@
 {
-  "name": "fndiaz-zabbixagent",
-  "version": "0.0.1",
+  "name": "zabbixagent",
+  "version": "0.0.3",
   "author": "fndiaz",
-  "summary": "Zabbix Agent",
+  "summary": "Simple Module Puppet Zabbix Agent",
   "license": "Apache 2.0",
-  "source": "",
-  "project_page": null,
-  "issues_url": null,
+  "source": "https://github.com/fndiaz/fndiaz_zabbixagent",
+  "project_page": "https://forge.puppetlabs.com/fndiaz/fndiaz-zabbixagent",
+  "issues_url": "https://github.com/fndiaz/fndiaz_zabbixagent",
+  "tags": ["zabbixagent"],
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
-  ]
+  ],
+  "operatingsystem_support": [
+    {
+    "operatingsystem":"Debian",
+    "operatingsystemrelease":[ "6.0", "7.0" ]
+    },
+    {
+    "operatingsystem": "Ubuntu",
+    "operatingsystemrelease": [ "12.04", "14.04" ]
+    }
+   ]
 }
-

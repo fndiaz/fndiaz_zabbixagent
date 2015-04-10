@@ -1,4 +1,4 @@
-class fndiaz_zabbixagent::params {
+class zabbixagent::params {
 
 $ensure=running 
 $enable=true
@@ -11,7 +11,7 @@ $zserver='10.4.4.97'
 		    $service_name 	= 'zabbix-agent'
 		    $folder_log 	= '/var/log/zabbix'
 		    $file_conf 	    = '/etc/zabbix/zabbix_agentd.conf' 
-            $template       = 'fndiaz_zabbixagent/zabbix_agentd.conf.erb'
+            $template       = 'zabbixagent/zabbix_agentd.conf.erb'
 	    }
 	    RedHat: {
 		    $package_name   = ''
@@ -20,7 +20,7 @@ $zserver='10.4.4.97'
             $file_conf      = ''
 	    }
 	    default: {
-		    fail("Modulo fndiaz_zabbixagent nao suportado pelo sistema: ${::osfamily}")
+		    fail("Modulo Zabbixagent nao suportado pelo sistema: ${::osfamily}")
 	    }
     }
 

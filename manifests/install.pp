@@ -1,15 +1,15 @@
-class fndiaz_zabbixagent::install {
+class zabbixagent::install {
 
-    package { $::fndiaz_zabbixagent::package_name:
+    package { $::zabbixagent::package_name:
         ensure  => present,
     }
 
-    file { $::fndiaz_zabbixagent::folder_log:
+    file { $::zabbixagent::folder_log:
         ensure  => directory,
         owner   => "zabbix",
         group   => "zabbix",
         #source  => "puppet:///files/var/log/zabbix",
-        require => Package[$::fndiaz_zabbixagent::package_name]
+        require => Package[$::zabbixagent::package_name]
     }
 
     file { '/etc/zabbix/zabbix_agentd.d':
@@ -17,24 +17,24 @@ class fndiaz_zabbixagent::install {
         owner   => "zabbix",
         group   => "zabbix",
         #source  => "puppet:///files/var/log/zabbix",
-        require => Package[$::fndiaz_zabbixagent::package_name]
+        require => Package[$::zabbixagent::package_name]
     }
 
-    file { $::fndiaz_zabbixagent::file_conf:
+    file { $::zabbixagent::file_conf:
         owner   => 'root',
         group   => 'root',
         mode    => '644',
-        content => template($::fndiaz_zabbixagent::template),
-        require => Package[$::fndiaz_zabbixagent::package_name],
-        notify => Service[$::fndiaz_zabbixagent::service_name],
+        content => template($::zabbixagent::template),
+        require => Package[$::zabbixagent::package_name],
+        notify => Service[$::zabbixagent::service_name],
     }
 
-    service { $::fndiaz_zabbixagent::service_name:
-        ensure  => $::fndiaz_zabbixagent::ensure,
-        enable  => $::fndiaz_zabbixagent::enable,
+    service { $::zabbixagent::service_name:
+        ensure  => $::zabbixagent::ensure,
+        enable  => $::zabbixagent::enable,
         hasstatus   => true,
         hasrestart => true,
-        require => Package[$::fndiaz_zabbixagent::package_name],
+        require => Package[$::zabbixagent::package_name],
     }
 
 }

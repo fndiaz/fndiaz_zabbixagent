@@ -1,4 +1,4 @@
-# fndiaz_zabbixagent
+# zabbixagent
 
 #### Table of Contents
 
@@ -14,20 +14,20 @@ Made by Fernando Vieira - fndiaz
 
 ## Setup
 
-To install the correct Zabbix Agent package on your system, include the 'fndiaz_zabbixagent : include fndiaz_zabbixagent
+To install the correct Zabbix Agent package on your system, include the 'zabbixagent : include zabbixagent'
 
 ## Usage
 
 * Install Zabbix Agent with default settings
 
 ~~~
-    class { 'fndiaz_zabbixagent': }
+    class { 'zabbixagent': }
 ~~~
 
 * Instal Zabbix Agent with some arguments
 
 ~~~
-    class {'fndiaz_zabbixagent':
+    class {'zabbixagent':
         ensure => running,
         enable => true,
         zserver=> '192.168.1.1',

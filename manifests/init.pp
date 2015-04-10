@@ -1,33 +1,21 @@
-# == Class: fndiaz_zabbixagent
+# == Class: zabbixagent
 #
 # Módulo Zabbix Agent 
 #
-# === Examples
-#
-# class {'fndiaz_zabbixagent':
-#         ensure => stopped,
-#         enable => false,
-# }
-#
-# === Authors
-#
-# Fernando Vieira <fndiaz02@gmail.com>
-#
-#
-class fndiaz_zabbixagent (
+class zabbixagent (
 
-$package_name   = $fndiaz_zabbixagent::params::package_name,
-$service_name   = $fndiaz_zabbixagent::params::service_name,
-$folder_log     = $fndiaz_zabbixagent::params::folder_log,
-$file_conf      = $fndiaz_zabbixagent::params::file_conf,
-$template       = $fndiaz_zabbixagent::params::template,
-$ensure         = $fndiaz_zabbixagent::params::ensure,
-$enable         = $fndiaz_zabbixagent::params::enable,
-$zserver       = $fndiaz_zabbixagent::params::zserver
+$package_name   = $zabbixagent::params::package_name,
+$service_name   = $zabbixagent::params::service_name,
+$folder_log     = $zabbixagent::params::folder_log,
+$file_conf      = $zabbixagent::params::file_conf,
+$template       = $zabbixagent::params::template,
+$ensure         = $zabbixagent::params::ensure,
+$enable         = $zabbixagent::params::enable,
+$zserver        = $zabbixagent::params::zserver
 
-)inherits fndiaz_zabbixagent::params
+)inherits zabbixagent::params
 {
 
-include fndiaz_zabbixagent::install
+include zabbixagent::install
 
 }
